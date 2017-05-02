@@ -72,4 +72,4 @@ if __name__ == '__main__':
         myargs['END'] = len(myarr)
 
     for i in xrange(myargs['START'], myargs['END']):
-        print '[%d]: %6.3E' % (i, myarr[i])
+        print '[%d] = '%i, myarr[i]
