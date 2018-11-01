@@ -71,5 +71,39 @@ if __name__ == '__main__':
     if myargs['END'] == -1:
         myargs['END'] = len(myarr)
 
+    vmin = float('inf')
+    i_vmin = None
+
+    vmax = -float('inf')
+    i_vmax = None
+
+    minabs = float('inf')
+    i_minabs = None
+
+    maxabs = 0.0
+    i_maxabs = None
+
     for i in xrange(myargs['START'], myargs['END']):
         print '[%d] = '%i, myarr[i]
+
+        if myarr[i] < vmin:
+            vmin = myarr[i]
+            i_vmin = i
+
+        if myarr[i] > vmax:
+            vmax = myarr[i]
+            i_vmax = i
+
+        if abs(myarr[i]) < minabs:
+            minabs = abs(myarr[i])
+            i_minabs = i
+
+        if abs(myarr[i]) > maxabs:
+            maxabs = abs(myarr[i])
+            i_maxabs = i
+
+    print '-'*72
+    print 'min = ', vmin, ', i = ', i_vmin
+    print 'max = ', vmax, ', i = ', i_vmax
+    print 'minabs = ', minabs, ', i = ', i_minabs
+    print 'maxabs = ', maxabs, ', i = ', i_maxabs
