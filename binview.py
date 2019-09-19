@@ -83,7 +83,7 @@ if __name__ == '__main__':
     maxabs = 0.0
     i_maxabs = None
 
-    for i in xrange(myargs['START'], myargs['END']):
+    for i in range(myargs['START'], myargs['END']):
         print '[%d] = '%i, myarr[i]
 
         if myarr[i] < vmin:
