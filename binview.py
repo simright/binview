@@ -6,7 +6,7 @@ if __name__ == '__main__':
     import getopt
 
     def print_usage():
-        print '''
+        print ('''
       Utility for viewing data in binary file
         
       Usage: 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
         -s START:     Starting entry for output (default=0, the first value in data)
         -e END:       Ending entry for output (default=-1, the last value in data)
                       -s 0 -e 100, prints data[0], ..., data[99]
-    '''
+    ''')
 
     options, args = getopt.getopt(sys.argv[1:], "ht:f:s:e:", ["help"])
 
@@ -84,7 +84,7 @@ if __name__ == '__main__':
     i_maxabs = None
 
     for i in range(myargs['START'], myargs['END']):
-        print '[%d] = '%i, myarr[i]
+        print('[%d] = '%i, myarr[i])
 
         if myarr[i] < vmin:
             vmin = myarr[i]
@@ -102,8 +102,8 @@ if __name__ == '__main__':
             maxabs = abs(myarr[i])
             i_maxabs = i
 
-    print '-'*72
-    print 'min = ', vmin, ', i = ', i_vmin
-    print 'max = ', vmax, ', i = ', i_vmax
-    print 'minabs = ', minabs, ', i = ', i_minabs
-    print 'maxabs = ', maxabs, ', i = ', i_maxabs
+    print('-'*72)
+    print('min = ', vmin, ', i = ', i_vmin)
+    print('max = ', vmax, ', i = ', i_vmax)
+    print('minabs = ', minabs, ', i = ', i_minabs)
+    print('maxabs = ', maxabs, ', i = ', i_maxabs)
